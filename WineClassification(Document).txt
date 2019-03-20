@@ -1,0 +1,15 @@
+								Name - Palash Nemade
+								  ID - 1001329664
+
+							MODEL USED FOR WINE CLASSIFICATION PROBLEM
+
+My initial approach for this classification problem was to use Decision tree classification, which I experimented with and looking at the accuracy I thought of looking
+at some other models from the sci-kitlearn library.
+
+The other model that I found out which uses Decision tree as its base model is the Random Forest Classifier. The best part of Random forest classifier is that it grows
+many classification trees during training on the given data set. More the number of decision trees the more robust the classifier becomes and possibility of higher accuracy. Each tree gives its classification result and there are such n-decision trees. The final classification result is decided on the basis of Mode of the classes given by each individual tree. Random forest using the test features and using the rules of each randomly created decision tree to predict the outcome and stores the predicted outcome. Then it calculates the vote for each predicted target and considers the highest voted predicted target as the final result. This helps random forest from preventing overfitting of the model.
+
+Using the parameter "n_estimators" we can decide the maximum number of decision trees to be built and thus making the model more robust. But increasing the value to any high number is also of no use. I have kept this value to 125, which is by default set to 10. Also parameter "max_features" which is by default set to auto, is the parameter used while splitting, changing its value to 1 shows a change in accuracy. Tuning the model using these parameters changes the accuracy also the cross validation result.
+
+References - http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier.fit
+	     http://dataaspirant.com/2017/05/22/random-forest-algorithm-machine-learing/
